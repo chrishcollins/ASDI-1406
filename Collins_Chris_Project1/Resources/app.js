@@ -26,6 +26,7 @@ var scrollView = Ti.UI.createScrollView({
   showVerticalScrollIndicator: true,
   layout: 'vertical',
   showHorizontalScrollIndicator: false,
+  top: 60,
   height: '90%',
   width: '90%'
 });

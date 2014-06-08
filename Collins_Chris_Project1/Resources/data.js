@@ -1,5 +1,5 @@
 //dot notation object
-  var car1 = new Object();
+/*  var car1 = new Object();
   car1.make = "Honda";
   car1.model = "CRZ";
   car1.year = "2010";
@@ -67,7 +67,7 @@
   myData = function(){
   	return "The " + this.make + " " + this.model + " reminds me of the old lamborghini body style.";
 };
-
+*/
 //------------------------------------------------------
 
 //literal notation object
@@ -151,5 +151,5 @@ var Ferrari = {
 };
 
 
-var coolCars = [car1, car2, car3, car4, car5, suv, corvette, Jaguar, Lambo, Ferrari];
+var coolCars = [/*car1, car2, car3, car4, car5, */ suv, corvette, Jaguar, Lambo, Ferrari];
 exports.data = coolCars;
