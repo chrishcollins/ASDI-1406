@@ -1,7 +1,7 @@
 =run
 Collins_Chris_Project1\:launchMode=run
-Collins_Chris_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
-LAST_LAUNCH_TIMESTAMP=1401848433242
+Collins_Chris_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
+LAST_LAUNCH_TIMESTAMP=1401993407543
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103
