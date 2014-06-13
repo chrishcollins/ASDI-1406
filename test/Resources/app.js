@@ -1,43 +1,32 @@
-//set background color
-Titanium.UI.setBackgroundColor('#000');
+Ti.UI.setBackgroundColor('#000000');
 
-//require data from other.js
-var carInfo = require('other');
-
-
-var mainWindow = Titanium.UI.createWindow({  
-    title:'Great Cars',
-    backgroundColor:'transparent',
-    color: "#fff",
-    navBarHidden: 'false',
-    statusBarHidden: 'false'
-    
+var win1 = Ti.UI.createWindow({
+	backgroundColor: '#fefefe',
+	fullscreen: true,
+	layout: 'vertical'
 });
 
-var navWin = Ti.UI.iOS.createNavigationWindow({
-	barColor: "black",
-	window: mainWindow
+var header = Ti.UI.createView({
+	height: 30,
+	backgroundColor: '#ccc',
+	top: 0
+});
+
+var headerLabel = Ti.UI.createLabel({
+	text: "Reddit API",
+	font: {fontFamily: 'Helvetica', fontSize: 14, fontWeight: 'bold'}
+});
+
+var scrollData = Ti.UI.createLabel({
+	height: Ti.Platform.displayCaps.platformHeight = header,
+	layout: 'vertical'
 });
 
 
-var scrollView = Ti.UI.createScrollView({
-  contentWidth: 'auto',
-  contentHeight: 'auto',
-  showVerticalScrollIndicator: true,
-  layout: 'vertical',
-  showHorizontalScrollIndicator: false,
-  top: 60,
-  height: '90%',
-  width: '90%'
-});
+header.add(headerLabel);
+win1.add(header);
+win1.add(scrollData);
 
-//add views to parent
+var data = require('data');
 
-mainWindow.add(scrollView);
-
-var showOther = require("other");
-showOther.views();
-
-carInfo.views();
-navWin.open();
-mainWindow.open();
+win1.open();

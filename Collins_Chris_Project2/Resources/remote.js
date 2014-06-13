@@ -1,59 +1,57 @@
-getOther = require('other');
-var myTable = Ti.UI.createTableViewSection({});
+//getOther = require('other');
 
 //what I’m going to do with the data when I get it
-var remoteResponse = function(){
+var remoteResponse = function() {
 	Ti.API.debug[this.responseText]; // debug out the response text
-	var json = json.parse(this.responseText);
-	
-	Ti.API.debug(testTitle);
-	Ti.API.debug(testAuthor);
-};
+	var json = JSON.parse(this.responseText);
 
+	var sections = [];
 
+	var myTable = Ti.UI.createTableViewSection({});
 
-for(i=0; i<json.data.children.length; i++){
-	dataRow = Ti.Ui.createTableViewRow({
-		url: json.data.children[i].data.url,
-		domain : json.data.children[i].data.domain,
-		testTitle : json.data.children[i].data.title,
-		testAuthor : json.data.children[i].data.Author,
-		thumbNail : json.data.children[i].data.thumbnail,
-		hasChild: true
-	});
-	
+	for ( i = 0; i < json.data.children.length; i++) {
+		var dataRow = Ti.UI.createTableViewRow({
+			url : json.data.children[i].data.url,
+			domain : json.data.children[i].data.domain,
+			testTitle : json.data.children[i].data.title,
+			testAuthor : json.data.children[i].data.Author,
+			thumbNail : json.data.children[i].data.thumbnail,
+			hasChild : true
+		});
+
 		var tableText = Ti.UI.createLabel({
-		text: dataRow.testTitle,
-		fontSize: 14,
-		color: "#000000",
-		textAlign: Ti.UI.TEXT_ALIGNMENT-LEFT,
-		top: 15,
-		left: 10
-	});
-	
-	    var infoText = Ti.UI.createLabel({
-		text: dataRow.domain,
-		fontSize: 11,
-		color: "#000000",
-		textAlign: Ti.UI.TEXT_ALIGNMENT-LEFT,
-		top: 25,
-		left: 10
-	});
-	
+			text : dataRow.testTitle,
+			fontSize : 11,
+			color : "#ffffff",
+			textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+			top : 5,
+			left : 10,
+			height : 60
+		});
+
+		var infoText = Ti.UI.createLabel({
+			text : dataRow.domain,
+			fontSize : 11,
+			color : "#000000",
+			textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+			bottom : 5,
+			left : 10
+		});
+		dataRow.add(tableText);
+		dataRow.add(infoText);
+		myTable.add(dataRow);
+	};
+	sections.push(myTable);
+	aTableView.setData(sections);
+	//Ti.API.debug(testTitle);
+	//Ti.API.debug(testAuthor);
 };
 
+//Ti.API.debug(testAuthor);
+//Ti.API.debug(testTitle);
+//exports.url = dataRow.url;
 
-
-
-dataRow.add(tableText, infoText);
-myTable.add(dataRow);
-
-
-Ti.API.debug(testAuthor);
-Ti.API.debug(testTitle);
-exports.url = dataRow.url;
-
-var remoteError = function(e) {  //if there is an error we are going to log out some other things to make sure we can recognize the error
+var remoteError = function(e) {//if there is an error we are going to log out some other things to make sure we can recognize the error
 	Ti.API.debug('Status: ' + this.status);
 	Ti.API.debug('Text: ' + this.responseText);
 	TI.API.debug('Error: ' + e.error);
@@ -61,15 +59,14 @@ var remoteError = function(e) {  //if there is an error we are going to log out 
 };
 
 // run everything through the XHR HTTP client
-var xhr = Ti.Network.createHttpClient({ 
-	Onload: remoteResponse,
-	OnError: remoteError,
-	Timeout: 5000 //if we don’t have a response within 5 sec then it will just stop.
+var xhr = Ti.Network.createHTTPClient({
+	Onload : remoteResponse,
+	OnError : remoteError,
+	Timeout : 5000 //if we don’t have a response within 5 sec then it will just stop.
 });
 
 //open using http
-xhr.open('GET' , 'http://www.reddit.com/r/Charleston/wiki/index');
+xhr.open('GET', 'http://api.reddit.com');
 xhr.send();
 
-var apiData = [remoteResponse, remoteError, json, xhr,testTitle, testAuthor, dataRow, jsonData, tableText, infoText];
-exports.remote = dataRow;
+//exports.remote = dataRow;

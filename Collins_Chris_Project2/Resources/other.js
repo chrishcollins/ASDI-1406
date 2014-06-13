@@ -1,4 +1,8 @@
+/*
 var remRequire = require('remote');
+
+//var remoteInfo = [dataWin, dataRow, nextLabel, otherLabel, aWebView, back];
+
 
 var rowEvent = aTableView.addEventlistener('click', function(e){
 	
@@ -39,7 +43,7 @@ var rowEvent = aTableView.addEventlistener('click', function(e){
 		var aWebView = Ti.UI.createWebView({
 			url : 'http://www.reddit.com/r/Charleston/wiki/index'
 		});
-		aWebView.addEventListener('cllick', function(e) {
+		aWebView.addEventListener('click', function(e) {
 			Ti.API.info('webview loaded: '+ e.url);
 		});
 		
@@ -67,7 +71,4 @@ dataWin.add(dataView, aWebView);
 dataView.add(nextLabel, otherLabel);
 win1.open(dataWin);
 dataWin.open();
-
-
-var remoteInfo = [dataWin, dataRow, nextLabel, otherLabel, aWebView, back];
-exports.other = remoteInfo;
+*/
