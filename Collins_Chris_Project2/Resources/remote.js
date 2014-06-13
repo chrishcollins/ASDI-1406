@@ -43,13 +43,7 @@ var remoteResponse = function() {
 	};
 	sections.push(myTable);
 	aTableView.setData(sections);
-	//Ti.API.debug(testTitle);
-	//Ti.API.debug(testAuthor);
 };
-
-//Ti.API.debug(testAuthor);
-//Ti.API.debug(testTitle);
-//exports.url = dataRow.url;
 
 var remoteError = function(e) {//if there is an error we are going to log out some other things to make sure we can recognize the error
 	Ti.API.debug('Status: ' + this.status);
