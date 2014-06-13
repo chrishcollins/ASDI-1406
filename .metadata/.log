@@ -42482,3 +42482,9 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/chriscol
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
 !SUBENTRY 1 org.eclipse.ui 2 0 2014-06-12 14:28:40.613
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+
+!ENTRY org.eclipse.e4.ui.css.core 4 0 2014-06-12 18:29:07.737
+!MESSAGE CSS property 'maximize-visible' has been deprecated: renamed as swt-maximize-visible
+
+!ENTRY org.eclipse.e4.ui.css.core 4 0 2014-06-12 18:29:07.743
+!MESSAGE CSS property 'minimize-visible' has been deprecated: renamed as swt-minimize-visible
