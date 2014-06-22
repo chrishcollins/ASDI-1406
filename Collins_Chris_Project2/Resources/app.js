@@ -1,5 +1,3 @@
-//var showOther = require("other");
-
 // set the background color
 Titanium.UI.setBackgroundColor('#000');
 
@@ -24,6 +22,7 @@ var aTableView = Ti.UI.createTableView({
 	bottom : 0
 });
 
+//create tab
 tab1 = Titanium.UI.createTab({
 	icon : 'KS_nav_views.png',
 	title : 'Tab 1',

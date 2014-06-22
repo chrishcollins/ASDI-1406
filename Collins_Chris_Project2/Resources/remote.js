@@ -25,7 +25,7 @@ var remoteResponse = function() {
 			color : "#ffffff",
 			textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
 			top : 5,
-			left : 10,
+			left : 70,
 			height : 60
 		});
 
@@ -35,10 +35,24 @@ var remoteResponse = function() {
 			color : "#000000",
 			textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
 			bottom : 5,
-			left : 10
+			left : 70
 		});
+		
+		var imgView = Ti.UI.createImageView({
+			images: dataRow.thumbnail,
+			height: 50,
+			width: 50,
+			left: 10,
+			right: 10,
+			image: json.data.children[i].data.thumbnail,
+			borderRadius: 10
+		});
+		
+		
+		
 		dataRow.add(tableText);
 		dataRow.add(infoText);
+		dataRow.add(imgView);
 		myTable.add(dataRow);
 	};
 	sections.push(myTable);
@@ -60,7 +74,7 @@ var xhr = Ti.Network.createHTTPClient({
 });
 
 //open using http
-xhr.open('GET', 'http://api.reddit.com');
+xhr.open('GET', 'http://api.reddit.com/r/Charleston');
 xhr.send();
 
 //exports.remote = dataRow;
