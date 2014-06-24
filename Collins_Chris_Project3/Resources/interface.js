@@ -1,19 +1,19 @@
 enter.addEventListener("click", function(e) {
 
-	if (enterName.value == "" && enterFood.value == "" && enterColor == "") {
+	if (enterName.value === "" && enterFood.value === "" && enterColor === "") {
 		alert("All fields must be complete.");
-	} else if (enterName.value == "") {
+	} else if (enterName.value === "") {
 		alert("You must enter your whole name.");
-	} else if (enterColor.value == "") {
+	} else if (enterColor.value === "") {
 		alert("You must enter a color.");
-	} else if (enterFood.value == "") {
+	} else if (enterFood.value === "") {
 		alert("You must enter your favorite food.");
 	} else {
 		var userInput = {};
 
 		userInput.wholeName = enterName.value;
 		userInput.yourFood = enterFood.value;
-		if (enterColor.value == "") {
+		if (enterColor.value === "") {
 			enterColor.value = "Please type your favorite color.";
 			userInput.updateColor = enterColor.value;
 		} else {
@@ -59,11 +59,11 @@ myTblView.addEventListener("click", function(e) {
 			win3.open();
 
 			var updateChanges = function() {
-				if (updateName.value == "") {
+				if (updateName.value === "") {
 					alert("You forgot to enter your full name.");
-				} else if (updateFood.value == "") {
+				} else if (updateFood.value === "") {
 					alert("You forgot to enter your favorite food.");
-				} else if (updateColor.value == "") {
+				} else if (updateColor.value === "") {
 					alert("You forgot to enter your favorite color.");
 				} else {
 					var userInput = {};

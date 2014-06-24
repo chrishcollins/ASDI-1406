@@ -12,6 +12,8 @@ exports.localInfo = function getRowData() {
 
 		createInfo.push({
 			title : displayData.wholeName + " " + displayData.yourFood + " " + displayData.updateColor,
+			color: '#fff',
+			backgroundColor: 'transparent',
 			wholeName : displayData.wholeName,
 			yourFood : displayData.yourFood,
 			updateColor : displayData.updateColor,

@@ -12,8 +12,8 @@ var localInfo = require("localData");
 var data = localInfo.localInfo();
 
 var myTblView = Ti.UI.createTableView({
-	color : '#fff',
-	backgroundColor : '#475159',
+	//backgroundColor : '#475159',
+	backgroundImage : 'images/3dSquare.jpg',
 	height : Ti.UI.FILL,
 	data : data,
 	editable : false,
