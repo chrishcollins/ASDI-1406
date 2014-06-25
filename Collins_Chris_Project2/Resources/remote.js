@@ -33,7 +33,7 @@ var remoteResponse = function() {
 		var infoText = Ti.UI.createLabel({
 			text : dataRow.domain,
 			fontSize : 11,
-			color : "#000000",
+			color : "#ffffff",
 			textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
 			bottom : 5,
 			left : 70

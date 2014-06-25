@@ -11,8 +11,6 @@ var tabGroup = Titanium.UI.createTabGroup();
 var win1 = Titanium.UI.createWindow({
 	title : 'Reddit API',
 	backgroundImage: 'images/wood_01.jpg',
-	//barColor : '#95C954',
-	//backgroundColor: 'red',
 	tabBarHidden : true,
 	statusBarHidden : false,
 	statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT,
