@@ -21,6 +21,7 @@ var remoteResponse = function() {
 
 		var tableText = Ti.UI.createLabel({
 			text : dataRow.testTitle,
+			backgroundImage: 'images/wood_01',
 			fontSize : 11,
 			color : "#ffffff",
 			textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,

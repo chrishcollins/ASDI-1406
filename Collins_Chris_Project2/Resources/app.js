@@ -1,5 +1,6 @@
 // set the background color
 Titanium.UI.setBackgroundColor('#000');
+Titanium.UI.iPhone.statusBarStyle = Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK;
 
 var getAPI = require('remote');
 
@@ -9,13 +10,17 @@ var tabGroup = Titanium.UI.createTabGroup();
 // create base UI tab and root window
 var win1 = Titanium.UI.createWindow({
 	title : 'Reddit API',
+	backgroundImage: 'images/wood_01.jpg',
+	//barColor : '#95C954',
+	//backgroundColor: 'red',
 	tabBarHidden : true,
-	statusBarHidden : false
+	statusBarHidden : false,
+	statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT,
 });
 
 // Create a TableView.
 var aTableView = Ti.UI.createTableView({
-	backgroundColor : '#616161',
+	backgroundColor : 'transparent',
 	rowHeight : 90,
 	rowWidth : 200,
 	top : 0,
