@@ -60,7 +60,7 @@ var enterName = Ti.UI.createTextField({
 	width : '95%',
 });
 
-var enterFood = Ti.UI.createTextField({
+var enterSource = Ti.UI.createTextField({
 	borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	hintText : "Favorite Food",
 	textAlign : "left",
@@ -75,7 +75,7 @@ var enterColor = Ti.UI.createTextField({
 	hintText : "Favorite Color",
 	textAlign : "left",
 	color : "#000000",
-	top : enterFood.top + 50,
+	top : enterSource.top + 50,
 	height : 40,
 	width : '95%',
 });
@@ -193,7 +193,7 @@ var req = require("interface");
 //add to parent view
 lastHeader.add(headText);
 win1.add(enterName);
-win1.add(enterFood);
+win1.add(enterSource);
 win1.add(enterColor);
 win1.add(enter);
 win2.add(myTblView);

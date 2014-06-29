@@ -1,18 +1,18 @@
 enter.addEventListener("click", function(e) {
 
-	if (enterName.value === "" && enterFood.value === "" && enterColor === "") {
+	if (enterName.value === "" && enterSource.value === "" && enterColor === "") {
 		alert("All fields must be complete.");
 	} else if (enterName.value === "") {
 		alert("You must enter your whole name.");
 	} else if (enterColor.value === "") {
 		alert("You must enter a color.");
-	} else if (enterFood.value === "") {
+	} else if (enterSource.value === "") {
 		alert("You must enter your favorite food.");
 	} else {
 		var userInput = {};
 
 		userInput.wholeName = enterName.value;
-		userInput.yourFood = enterFood.value;
+		userInput.yourFood = enterSource.value;
 		if (enterColor.value === "") {
 			enterColor.value = "Please type your favorite color.";
 			userInput.updateColor = enterColor.value;
@@ -25,11 +25,11 @@ enter.addEventListener("click", function(e) {
 		db.execute("INSERT INTO local (user) VALUES(?)", updateData);
 
 		enterName.value = "";
-		enterFood.value = "";
+		enterSource.value = "";
 		enterColor.value = "";
 
 		enterName.blur();
-		enterFood.blur();
+		enterSource.blur();
 		enterColor.blur();
 
 		data = localInfo.localInfo();
@@ -43,7 +43,7 @@ enter.addEventListener("click", function(e) {
 myTblView.addEventListener("click", function(e) {
 	var id = e.rowData.id;
 	var enterName = e.rowData.wholeName;
-	var enterFood = e.rowData.yourFood;
+	var enterSource = e.rowData.yourFood;
 	var enterColor = e.rowData.updateColor;
 
 	var dialog = Ti.UI.createOptionDialog(userDecision);
@@ -53,7 +53,7 @@ myTblView.addEventListener("click", function(e) {
 		if (e.index === 0) {
 
 			updateName.value = enterName;
-			updateFood.value = enterFood;
+			updateFood.value = enterSource;
 			updateColor.value = enterColor;
 
 			win3.open();

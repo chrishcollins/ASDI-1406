@@ -1,64 +1,47 @@
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)
+// set the background color
 Titanium.UI.setBackgroundColor('#000');
+
+var getAPI = require('data');
 
 // create tab group
 var tabGroup = Titanium.UI.createTabGroup();
 
-
-//
 // create base UI tab and root window
-//
-var win1 = Titanium.UI.createWindow({  
-    title:'Tab 1',
-    backgroundColor:'#fff'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Tab 1',
-    window:win1
+var win1 = Titanium.UI.createWindow({
+	title : 'Charleston, SC Reddit',
+	backgroundImage: 'images/wood_01.jpg',
+	tabBarHidden : true,
+	statusBarHidden : false,
+	statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT,
 });
 
-var label1 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 1',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
+// Create a TableView.
+var aTableView = Ti.UI.createTableView({
+	backgroundColor : 'transparent',
+	rowHeight : 90,
+	rowWidth : 200,
+	top : 0,
+	bottom : 0
 });
 
-win1.add(label1);
-
-//
-// create controls tab and root window
-//
-var win2 = Titanium.UI.createWindow({  
-    title:'Tab 2',
-    backgroundColor:'#fff'
-});
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'Tab 2',
-    window:win2
+//create tab
+var tab1 = Titanium.UI.createTab({
+	icon : 'KS_nav_views.png',
+	title : 'Home',
+	window : win1
 });
 
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 2',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
 
-win2.add(label2);
+var bringData = require('database');
+
+tabGroup.addTab(tab1);
+//tabGroup.addTab(tab2);
 
 
-
-//
-//  add tabs
-//
-tabGroup.addTab(tab1);  
-tabGroup.addTab(tab2);  
+win1.add(aTableView);
 
 
-// open tab group
 tabGroup.open();
+
+
+

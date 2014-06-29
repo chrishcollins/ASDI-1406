@@ -3,4 +3,6 @@
 	<section name="BasicNewProjectResourceWizard">
 		<item value="3.2.2.GA" key="titaniumSDK"/>
 	</section>
+	<section name="PromoteToProjectWizard">
+	</section>
 </section>
